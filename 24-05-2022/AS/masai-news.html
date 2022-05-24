@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai News (CSS Flex) (24-05-2022) - Sanajit Jana (fw19_0513)</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #news {
+        background-color: #f2f6ff;
+        padding-top: 25px;
+        padding-bottom: 35px;
+        width: 100%;
+        margin-bottom: 80px;
+      }
+      h1 {
+        margin-top: 20px;
+        text-align: center;
+        font-family: Poppins, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: bold;
+        font-size: 34px;
+        line-height: 40px;
+      }
+      #news > div {
+        display: flex;
+        width: 85%;
+        margin: auto;
+        justify-content: center;
+      }
+      #news > div > div {
+        padding: 24px;
+        background-color: white;
+        margin: 30px;
+        border-radius: 15px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        width: 320px;
+      }
+      #news > div > div:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        cursor: pointer;
+      }
+
+      #news > div > div > img {
+        width: 100%;
+      }
+      img + p {
+        color: #3470e4;
+        font-size: 16px;
+        font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 600;
+      }
+      img + p + p {
+        font-family: Poppins, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 27px;
+        color: #11202c;
+      }
+      img + p + p + p {
+        font-size: 16px;
+        font-family: "Open Sans", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-weight: 400;
+        color: #544d4f;
+      }
+      button {
+        border: 1px solid #ed0331;
+        border-radius: 7px;
+        padding: 10px 15px;
+        display: block;
+        margin: auto;
+        margin-top: 25px;
+        background-color: transparent;
+        font-family: Family "Open Sans", ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #ed0331;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      #investors {
+        margin: auto;
+        margin-bottom: 50px;
+        width: 82%;
+      }
+      #investors > div {
+        display: flex;
+        margin-top: 40px;
+        justify-content: center;
+      }
+      #investors > div > img {
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="news">
+      <h1>Masai In The News</h1>
+      <div>
+        <div>
+          <img
+            src="https://masai-website-images.s3.ap-south-1.amazonaws.com/ET_3754cc10ec.png"
+            alt="TET"
+          />
+          <p>21 Dec 2021</p>
+          <p>
+            Edtech startup Masai School acquires data analytics firm Prepleaf
+            for $1 million.
+          </p>
+          <p>
+            With their latest acquisition, Masai moves one step closer to
+            becoming
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://masai-website-images.s3.ap-south-1.amazonaws.com/money_Control_c3e25f5ceb.png"
+            alt="MC"
+          />
+          <p>26 Oct 2021</p>
+          <p>
+            Kunal Shah, Vijay Shekhar Sharma, Amrish Rau among 21 angel
+            investors in Masai School
+          </p>
+          <p>
+            Masai School is aiming to expand to 20 smaller cities by March 2022
+            and...
+          </p>
+        </div>
+        <div>
+          <img
+            src="https://masai-website-images.s3.ap-south-1.amazonaws.com/vccircle_6ef779c958.png"
+            alt="V"
+          />
+          <p>18 Aug 2020</p>
+          <p>
+            Unitus Ventures leads pre-Series A funding for coding-focussed Masai
+            School
+          </p>
+          <p>
+            Software coding platform Masai School has raised $2.5 million (Rs
+            18.6 crore) in...
+          </p>
+        </div>
+      </div>
+      <button>see more &nbsp;&nbsp;&#62;</button>
+    </div>
+    <div id="investors">
+      <h1>Our Investors, Who Believe In Us</h1>
+      <div>
+        <img
+          src="https://masaischool.com/img/our-investors/unitus.svg"
+          alt="unitus"
+        />
+        <img
+          src="https://masaischool.com/img/our-investors/omidyar.svg"
+          alt="ON"
+        />
+        <img
+          src="https://masaischool.com/img/our-investors/indiaQuotient.svg"
+          alt="IndiaQ"
+        />
+      </div>
+    </div>
+  </body>
+</html>

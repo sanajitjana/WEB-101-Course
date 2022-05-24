@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Masai Navbar (CSS Flex) (24-05-2022) - Sanajit Jana (fw19_0513)
+    </title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #navbar {
+        height: 80px;
+        width: 82%;
+        margin: auto;
+        display: flex;
+        display: flex;
+        justify-content: space-between;
+      }
+      #navbar > div {
+        display: flex;
+        align-items: center;
+      }
+      #navbar > div:first-child:hover {
+        cursor: pointer;
+      }
+      #navbar > div:last-child {
+        display: flex;
+        justify-content: space-around;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: sans-serif;
+      }
+      #navbar > div:last-child > p {
+        padding: 10px 20px;
+      }
+      #navbar > div:last-child > p:hover {
+        background-color: #fffafb;
+        border-radius: 7px;
+        color: #ed0331;
+        cursor: pointer;
+      }
+      p + div {
+        display: flex;
+        background-color: #f2fdff;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px;
+        padding: 0px 30px;
+        color: #6e71cc;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: "Open sans", sans-serif;
+        font-weight: 400;
+        margin-right: 30px;
+      }
+      p + div:hover {
+        background-color: #cfe9ee;
+        cursor: pointer;
+      }
+      p + div > img {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+      }
+      button {
+        color: #ed0331;
+        border: 1px solid #ed0331;
+        background-color: white;
+        border-radius: 7px;
+        padding: 15px 17px;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: "Open sans", sans-serif;
+        font-weight: 400;
+      }
+      button:hover {
+        background-color: #fedfe5;
+        cursor: pointer;
+      }
+      select {
+        border: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-family: "Open sans", sans-serif;
+        font-weight: 400;
+        padding: 10px 20px;
+      }
+      select:hover {
+        background-color: #fffafb;
+        border-radius: 7px;
+        color: #ed0331;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <div>
+        <img
+          src="https://masaischool.com/img/navbar/logo.svg"
+          alt="Masai Logo"
+        />
+      </div>
+      <div>
+        <select>
+          <option>Courses</option>
+        </select>
+        <p>Fees & ISA</p>
+        <p>About Us</p>
+        <p>Hire from us</p>
+        <p>Faq</p>
+        <p>Events</p>
+        <div>
+          <p>Refer & Earn</p>
+          <img src="https://masaischool.com/img/referral/hand.png" alt="hand" />
+        </div>
+        <button>Login</button>
+      </div>
+    </div>
+  </body>
+</html>

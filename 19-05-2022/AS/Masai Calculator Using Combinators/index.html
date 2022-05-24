@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Masai Calculator Using Combinators (19-05-2022) - Sanajit Jana (fw19_0513)
+    </title>
+    <style>
+      h1 {
+        font-size: 45px;
+        color: teal;
+        text-align: center;
+      }
+      h1 + div {
+        height: 350px;
+        width: 270px;
+        margin: auto;
+        margin-top: 60px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 40px;
+      }
+      div:first-child {
+        height: 60px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border-radius: 7px;
+        width: 260px;
+        margin: auto;
+        margin-bottom: 15px;
+      }
+      div > div {
+        display: flex;
+      }
+      button {
+        width: 60px;
+        height: 58px;
+        margin: auto;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        border: none;
+        background-color: transparent;
+        border-radius: 7px;
+        margin: 4px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+      div > button:last-child {
+        background-color: black;
+        color: white;
+      }
+      h1 + div > div:last-child > button:first-child {
+        background-color: #ff0000;
+        color: white;
+      }
+      h1 + div > div:last-child > button:nth-child(3) {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Masai Calculator</h1>
+    <div>
+      <div></div>
+      <div>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>+</button>
+      </div>
+      <div>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>-</button>
+      </div>
+      <div>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>x</button>
+      </div>
+      <div>
+        <button>C</button>
+        <button>0</button>
+        <button>=</button>
+        <button>/</button>
+      </div>
+    </div>
+  </body>
+</html>
