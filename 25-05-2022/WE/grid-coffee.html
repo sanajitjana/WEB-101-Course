@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Grid Coffee (CSS Grid) (25-05-2022) - Sanajit Jana (fw19_0513)
+    </title>
+    <style>
+      #container {
+        width: 78%;
+        margin: auto;
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 160px);
+        gap: 30px;
+      }
+      #container > div {
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 10px 30px;
+      }
+      #container > div > div {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #222222;
+        font-family: sans-serif;
+      }
+      #container > div > div > h2 + h2 {
+        color: #b68834;
+        font-family: sans-serif;
+      }
+      #container > div > p {
+        margin: auto;
+        color: #787878;
+        padding-top: 2px;
+        font-family: sans-serif;
+        line-height: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div>
+        <div>
+          <h2>Cappuccino</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Americano</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Espresso</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Macchino</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Mocha</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Coffee Latte</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Piccolo Latte</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Ristretto</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+      <div>
+        <div>
+          <h2>Affogoato</h2>
+          <h2>$49</h2>
+        </div>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
+          delectus!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Calculator Grid (19-05-2022) - Sanajit Jana (fw19_0513)</title>
+  </head>
+  <style>
+    h1 {
+      color: teal;
+      text-align: center;
+      font-size: 44px;
+    }
+    #calculator {
+      width: 270px;
+      height: 500px;
+      margin: auto;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      height: 350px;
+      margin-top: 60px;
+      padding: 40px;
+    }
+    #display {
+      width: 260px;
+      margin: auto;
+      height: 60px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border-radius: 7px;
+    }
+    #keyboard {
+      width: 260px;
+      margin: auto;
+      margin-top: 15px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(4, 60px);
+      gap: 7px;
+    }
+    #keyboard > div {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 5px;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+    #keyboard > div:hover {
+      background-color: teal;
+      color: white;
+      cursor: pointer;
+    }
+    .black {
+      background-color: black;
+      color: white;
+    }
+    .red {
+      background-color: red;
+      color: white;
+    }
+  </style>
+  <body>
+    <h1>Masai Calculator</h1>
+    <div id="calculator">
+      <div id="display"></div>
+      <div id="keyboard">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="black">+</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="black">-</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div class="black">x</div>
+        <div class="red">C</div>
+        <div>0</div>
+        <div class="black">=</div>
+        <div class="black">/</div>
+      </div>
+    </div>
+  </body>
+</html>
