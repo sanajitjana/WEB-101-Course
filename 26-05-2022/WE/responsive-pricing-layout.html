@@ -4,7 +4,162 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+      Responsive Pricing Layout (26-05-2022) - Sanajit Jana (fw19_0513)
+    </title>
+    <style>
+      #heading {
+        text-align: center;
+        width: 35%;
+        margin: auto;
+        font-family: sans-serif;
+        margin-top: 50px;
+      }
+      #heading > h1 {
+        font-size: 35px;
+        color: #19304b;
+      }
+      #heading > p {
+        font-size: 16px;
+        line-height: 22px;
+        color: #6d6d6d;
+        margin-top: -10px;
+      }
+      #cards-section {
+        width: 65%;
+        margin: auto;
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+      }
+      #cards-section > div {
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        font-family: sans-serif;
+        color: #76787a;
+      }
+      #cards-section > div > h2 {
+        padding-top: 20px;
+        font-size: 22px;
+        color: #19304b;
+      }
+      h2 + h1 + p {
+        font-style: italic;
+        margin-top: -20px;
+      }
+      p + p {
+        padding: 15px 25px 22px 25px;
+        font-size: 16px;
+        line-height: 24px;
+        color: #76787a;
+      }
+
+      #cards-section > div:nth-child(1) > h1 {
+        color: #09ab78;
+      }
+      #cards-section > div:nth-child(2) > h1 {
+        color: #f27e42;
+      }
+      #cards-section > div:nth-child(3) > h1 {
+        color: #4294f2;
+      }
+
+      button {
+        border: 2px solid #007aff;
+        background-color: transparent;
+        color: #007aff;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 15px 40px 15px 40px;
+        margin-bottom: 30px;
+      }
+
+      button:hover {
+        background-color: #007aff;
+        color: white;
+        cursor: pointer;
+      }
+
+      .fill {
+        background-color: #007aff;
+        color: white;
+      }
+
+      .fill:hover {
+        background-color: transparent;
+        color: #007aff;
+        cursor: pointer;
+      }
+
+      @media all and (min-width: 480px) and (max-width: 720px) {
+        #heading {
+          width: 80%;
+        }
+        #cards-section {
+          width: 95%;
+          margin-top: 50px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, auto);
+        }
+      }
+
+      @media all and (min-width: 320px) and (max-width: 479px) {
+        #heading {
+          width: 90%;
+        }
+        #cards-section {
+          width: 90%;
+          margin-top: 40px;
+          grid-template-columns: repeat(1, 1fr);
+          grid-template-rows: repeat(2, auto);
+        }
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div id="heading">
+      <h1>Choose a plan that right for your business</h1>
+      <p>
+        We collect reviews from our users so you can get an honest opinion of
+        what an experience with our website are really like!
+      </p>
+    </div>
+
+    <div id="cards-section">
+      <div>
+        <h2>Starter Plan</h2>
+        <h1>Free</h1>
+        <p>Per month</p>
+        <p>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </p>
+        <button>Start Now</button>
+      </div>
+      <div>
+        <h2>Starter Plan</h2>
+        <h1>$39.00</h1>
+        <p>Per month</p>
+        <p>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </p>
+        <button class="fill">Start Now</button>
+      </div>
+      <div>
+        <h2>Starter Plan</h2>
+        <h1>$59.00</h1>
+        <p>Per month</p>
+        <p>
+          We collect reviews from our users so you can get an honest opinion of
+          what an experience with our website.
+        </p>
+        <button>Start Now</button>
+      </div>
+    </div>
+  </body>
 </html>
