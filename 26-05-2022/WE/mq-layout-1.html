@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MQ Layout - 1 (26-05-2022) - Sanajit Jana (fw19_0513)</title>
+  </head>
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 80px 300px;
+      gap: 30px;
+      grid-template-areas:
+        "nav nav nav nav"
+        "b1 b2 b3 b4";
+      font-size: 30px;
+      color: #5b544f;
+      font-family: sans-serif;
+    }
+    body > div {
+      padding: 10px;
+    }
+    body > div:first-child {
+      grid-area: nav;
+      background-color: yellow;
+      font-size: 45px;
+      color: #000000;
+    }
+    body > div:nth-child(2) {
+      background-color: #ff0000;
+      grid-area: b1;
+    }
+    body > div:nth-child(3) {
+      background-color: #00ff2a;
+      grid-area: b2;
+    }
+    body > div:nth-child(4) {
+      background-color: #5763ee;
+      grid-area: b3;
+    }
+    body > div:nth-child(5) {
+      background-color: #989898;
+      grid-area: b4;
+    }
+
+    @media all and (min-width: 480px) and (max-width: 720px) {
+      body {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 80px 300px 300px;
+        grid-template-areas:
+          "nav nav"
+          "b1 b3"
+          "b2 b4";
+      }
+    }
+
+    @media all and (min-width: 320px) and (max-width: 479px) {
+      body {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 80px 150px 150px 150px 150px;
+        gap: 15px;
+        grid-template-areas:
+          "nav"
+          "b1"
+          "b4"
+          "b2"
+          "b3";
+      }
+    }
+  </style>
+  <body>
+    <div>Navigation</div>
+    <div>Box 1</div>
+    <div>Box 2</div>
+    <div>Box 3</div>
+    <div>Box 4</div>
+  </body>
+</html>
