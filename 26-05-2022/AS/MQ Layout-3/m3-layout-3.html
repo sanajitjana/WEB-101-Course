@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MQ Layout-3 (26-05-2022) - Sanajit Jana (fw19_0513)</title>
+  </head>
+  <style>
+    body {
+      margin: 30px 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 80px 150px 150px 150px;
+      gap: 20px 50px;
+      grid-template-areas:
+        "nav nav nav"
+        "left left rb1"
+        "left left rb2"
+        "left left rb3";
+      color: #6a5456;
+      font-family: sans-serif;
+      font-size: 24px;
+    }
+    body > div {
+      padding: 15px;
+    }
+    body > div:nth-child(1) {
+      background-color: #f7ff00;
+      grid-area: nav;
+      color: #000000;
+      font-size: 44px;
+    }
+    body > div:nth-child(2) {
+      background-color: #ff0000;
+      grid-area: left;
+    }
+    body > div:nth-child(3) {
+      background-color: #00ff2a;
+      grid-area: rb1;
+    }
+    body > div:nth-child(4) {
+      background-color: #00ff2a;
+      grid-area: rb2;
+    }
+    body > div:nth-child(5) {
+      background-color: #00ff2a;
+      grid-area: rb3;
+    }
+    @media all and (min-width: 480px) and (max-width: 768px) {
+      body {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 80px 150px 150px 150px;
+        grid-template-areas:
+          "nav nav nav"
+          "left left left"
+          "left left left"
+          "rb1 rb2 rb3";
+      }
+    }
+    @media all and (min-width: 320px) and (max-width: 479px) {
+      body {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 80px 190px 150px 150px 150px;
+        grid-template-areas:
+          "nav"
+          "left"
+          "rb1"
+          "rb2"
+          "rb3";
+      }
+    }
+  </style>
+  <body>
+    <div>Navigation</div>
+    <div>LEFT BOX</div>
+    <div>RIGHT BOX 1</div>
+    <div>RIGHT BOX 2</div>
+    <div>RIGHT BOX 3</div>
+  </body>
+</html>

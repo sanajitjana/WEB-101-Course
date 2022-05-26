@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MQ Layout-2 (26-05-2022) - Sanajit Jana (fw19_0513)</title>
+  </head>
+  <style>
+    body {
+      margin: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 80px 550px;
+      gap: 20px 80px;
+      grid-template-areas:
+        "nav nav"
+        "left right";
+      font-size: 28px;
+      font-family: sans-serif;
+      color: #635859;
+    }
+    body > div {
+      padding: 15px;
+    }
+    body > div:nth-child(1) {
+      background-color: #f7ff00;
+      grid-area: nav;
+      color: #000000;
+      font-size: 44px;
+    }
+    body > div:nth-child(2) {
+      background-color: #ff0000;
+      grid-area: left;
+    }
+    body > div:nth-child(3) {
+      background-color: #00ff2a;
+      grid-area: right;
+    }
+
+    @media all and (min-width: 320px) and (max-width: 480px) {
+      body {
+        margin: 10px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: 80px 250px 250px;
+        gap: 20px;
+        grid-template-areas:
+          "nav"
+          "left"
+          "right";
+      }
+    }
+  </style>
+  <body>
+    <div>Navigation</div>
+    <div>LEFT BOX</div>
+    <div>RIGHT BOX</div>
+  </body>
+</html>
