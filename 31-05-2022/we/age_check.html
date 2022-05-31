@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM-I Driving Age Check - Sanajit Jana(fw19_0513)</title>
+  </head>
+  <body>
+    <input id="age" type="number" placeholder="enter age" />
+    <button onClick="ageCheck()">Age Check</button>
+    <p id="para">Display result here</p>
+  </body>
+  <script>
+    function ageCheck() {
+      let age = document.getElementById("age").value;
+      if (age > 18) {
+        document.getElementById("para").innerText = "You can drive in India!";
+      } else if (age < 18) {
+        document.getElementById("para").innerText = "You can't drive in India";
+      } else {
+        document.getElementById("para").innerText =
+          "You are just old enough to drive in India!";
+      }
+    }
+  </script>
+</html>
