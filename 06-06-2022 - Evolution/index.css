@@ -1,0 +1,84 @@
+/* Fill CSS here */
+h1 {
+    margin-top: 50px;
+    text-align: center;
+    color: #005792;
+    text-decoration: underline;
+    text-transform: uppercase;
+    word-spacing: 15px;
+    font-family: sans-serif;
+  }
+  body > div {
+    display: flex;
+    justify-content: space-around;
+  }
+  thead > tr {
+    justify-content: right;
+  }
+  thead th {
+    background-color: #0368aa;
+    color: white;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+  }
+  form {
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 25px 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 30%;
+  }
+  table {
+    text-align: center;
+    border-collapse: collapse;
+    width: 60%;
+    margin: auto;
+    margin-top: 50px;
+  }
+  form > input, select {
+    height: 35px;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    margin: 5px 0px 10px 0px;
+    width: 90%;
+    padding: 0px 10px;
+  }
+  form > select {
+    width: 95%;
+  }
+  form > input:last-child {
+    height: 40px;
+    border: transparent;
+    border-radius: 40px;
+    margin: 5px 0px 10px 0px;
+    width: 95%;    
+    background-color: #2b619e;
+    color: white;
+    font-size: 16px;
+  }
+  form > input:last-child:hover {
+    cursor: pointer;
+  }
+  form > label {
+    margin-top: 50px;
+    color: black;
+  }
+  table td:last-child {
+    background-color: rgb(209, 0, 0);
+    color: white;
+  }
+  table td:last-child:hover {
+    cursor: pointer;
+  }
+  table > tbody > tr {
+    height: 60px;
+    background-color: rgb(220, 220, 220);
+    border: 1px solid white;
+  }
+  table td th {
+    background-color: rgb(228, 228, 228);
+    border: 1px solid #ddd;
+    height: 10px;
+    padding: 10px;
+  }
