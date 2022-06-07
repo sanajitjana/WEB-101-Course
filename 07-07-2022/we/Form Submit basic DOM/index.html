@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submit basic DOM - Sanajit Jana (fw19_0513)</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" id="name" placeholder="Enter name" />
+      <input type="text" id="age" placeholder="Enter age" />
+      <select name="Gender" id="gender">
+        <option value="">Select Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <input type="number" id="mobile" placeholder="Enter phone number" />
+      <input type="submit" />
+    </form>
+  </body>
+  <script>
+    document.querySelector("form").addEventListener("submit", formSubmit);
+    let arr = [];
+    function formSubmit(event) {
+      event.preventDefault();
+      let obj = {
+        name: document.querySelector("#name").value,
+        age: document.querySelector("#age").value,
+        gender: document.querySelector("#gender").value,
+        email: document.querySelector("#email").value,
+        number: document.querySelector("#mobile").value,
+      };
+      arr.push(obj);
+      console.log(arr);
+    }
+  </script>
+</html>
