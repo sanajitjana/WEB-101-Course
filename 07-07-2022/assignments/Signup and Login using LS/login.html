@@ -55,14 +55,13 @@
   <body>
     <img src="https://sso.masaischool.com/brand_dark.svg" alt="masai-logo" />
     <div id="box">
-      <form action="login.html" method="post">
-        <h3>Sign Up</h3>
+      <form>
+        <h3>Sign In</h3>
         <input type="email" id="email" placeholder="Enter email address" />
-        <input type="number" id="phone" placeholder="Enter phone number" />
         <input type="password" id="password" placeholder="Enter password" />
-        <input type="submit" id="submit" value="Sign Up" />
+        <input type="submit" id="submit" value="Sign In" />
         <br /><br />
-        <p>Already have an account? <a href="login.html">Sign In</a></p>
+        <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
       </form>
     </div>
   </body>
@@ -70,24 +69,23 @@
     document.querySelector("form").addEventListener("submit", formSubmit);
     function formSubmit() {
       event.preventDefault();
+      let lsEmail = localStorage.getItem("email");
+      let lsPassword = localStorage.getItem("password");
+
       let email = document.querySelector("#email").value;
-      let phone = document.querySelector("#phone").value;
       let password = document.querySelector("#password").value;
       if (email == "") {
-        alert("Please enter the email");
-      } else if (phone == "") {
-        alert("Please enter the phone");
+        alert("Please enter email address");
       } else if (password == "") {
-        alert("Please enter the password");
-      } else {
-        localStorage.setItem("email", email);
-        localStorage.setItem("phone", phone);
-        localStorage.setItem("password", password);
-
-        alert("Sign Up successful");
-        window.location.href = "login.html";
+        alert("Please enter password");
+      } else if (lsEmail == email && lsPassword == password) {
+        alert("Login successful");
         document.querySelector("#email").value = "";
-        document.querySelector("#phone").value = "";
+        document.querySelector("#password").value = "";
+        window.location.href = "home.html";
+      } else {
+        alert("Please enter correct details");
+        document.querySelector("#email").value = "";
         document.querySelector("#password").value = "";
       }
     }
