@@ -68,11 +68,17 @@
   </body>
   <script>
     document.querySelector("form").addEventListener("submit", formSubmit);
+    let loginArray = JSON.parse(localStorage.getItem("loginArray")) || [];
+
     function formSubmit() {
       event.preventDefault();
+
+      //fetch value
       let email = document.querySelector("#email").value;
       let phone = document.querySelector("#phone").value;
       let password = document.querySelector("#password").value;
+
+      //validation
       if (email == "") {
         alert("Please enter the email");
       } else if (phone == "") {
@@ -80,12 +86,18 @@
       } else if (password == "") {
         alert("Please enter the password");
       } else {
-        localStorage.setItem("email", email);
-        localStorage.setItem("phone", phone);
-        localStorage.setItem("password", password);
+        let myObj = {
+          email_key: email,
+          phone_key: phone,
+          password_key: password,
+        };
+        loginArray.push(myObj);
 
+        //store in LocalStorage
+        localStorage.setItem("loginArray", JSON.stringify(loginArray));
+
+        //sucess alert and clear form
         alert("Sign Up successful");
-        window.location.href = "login.html";
         document.querySelector("#email").value = "";
         document.querySelector("#phone").value = "";
         document.querySelector("#password").value = "";

@@ -1,27 +1,42 @@
 document.querySelector("form").addEventListener("submit", formSubmit);
-function formSubmit(event) {
-  let arr = [];
-  event.preventDefault();
+
+//fetched data from LocalStorage
+let arr = JSON.parse(localStorage.getItem("dsaQuesArray")) || [];
+
+function formSubmit() {
+  //fetched and store data in array of objects
   let obj = {
     qTitle: document.querySelector("#title").value,
     ojLink: document.querySelector("#link").value,
     difiCulty: document.querySelector("#difficulty").value,
   };
   arr.push(obj);
-  localStorage.setItem("arrOfObjects", JSON.stringify(arr));
-  let data = JSON.parse(localStorage.getItem("arrOfObjects"));
-  displayData(data);
+
+  //store to LocalStorage
+  localStorage.setItem("dsaQuesArray", JSON.stringify(arr));
+
+  //submit and clear form
+  document.querySelector("#title").value = "";
+  document.querySelector("#link").value = "";
+  document.querySelector("#difficulty").value = "";
 }
 
+//calling table display function
+displayData(arr);
+
 function displayData(arr) {
-  arr.forEach(function (ele) {
+  arr.forEach(function (ele, index, array) {
     let tr = document.createElement("tr");
+
+    //Questions title column
     let td1 = document.createElement("td");
     td1.innerText = ele.qTitle;
 
+    //OJ Link url column
     let td2 = document.createElement("td");
     td2.innerText = ele.ojLink;
 
+    //difiCulty column
     let td3 = document.createElement("td");
     td3.innerText = ele.difiCulty;
     if (ele.difiCulty == "Easy") {
@@ -32,6 +47,7 @@ function displayData(arr) {
       td3.style.color = "Red";
     }
 
+    //Revision column
     let td4 = document.createElement("td");
     if (ele.difiCulty == "Easy") {
       td4.innerText = "No";
@@ -39,20 +55,29 @@ function displayData(arr) {
       td4.innerText = "Yes";
     }
 
+    //delete button
     let td5 = document.createElement("td");
     td5.innerText = "Delete";
     td5.style.backgroundColor = "red";
     td5.style.color = "white";
     td5.addEventListener("mouseover", hoverFunction);
-    function hoverFunction(event) {
-      event.target.style.cursor = "pointer";
-    }
-    td5.addEventListener("click", deleteFunction);
-    function deleteFunction(event) {
-      event.target.parentNode.remove();
-    }
+    td5.addEventListener("click", function (event) {
+      deleteFromLS(event, index, array);
+    });
 
+    //append
     tr.append(td1, td2, td3, td4, td5);
     document.querySelector("tbody").append(tr);
   });
+}
+
+//delete button hover
+function hoverFunction(event) {
+  event.target.style.cursor = "pointer";
+}
+
+function deleteFromLS(event, index, array) {
+  array.splice(index, 1);
+  localStorage.setItem("dsaQuesArray", JSON.stringify(array));
+  event.target.parentNode.remove();
 }

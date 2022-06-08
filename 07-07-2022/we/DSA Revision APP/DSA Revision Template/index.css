@@ -8,13 +8,16 @@ body {
 }
 /* Navbar related css */
 
-#submit {
-  width: 100%;
+#submit {  
   margin-top: 20px;
   background-color: rgb(24, 64, 110);
   color: white;
   border: none;
   border-radius: 15px;
+  
+}
+#submit:hover {
+  cursor: pointer;
 }
 /* Navbar related css */
 
@@ -26,6 +29,7 @@ select {
   margin: 15px 0px;
   font-size: 20px;
   padding: 2%;
+  width: 100%;
 }
 option {
   font-size: 25px;
@@ -59,6 +63,7 @@ table {
   width: 70%;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 th,

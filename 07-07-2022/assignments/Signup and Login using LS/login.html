@@ -67,18 +67,29 @@
   </body>
   <script>
     document.querySelector("form").addEventListener("submit", formSubmit);
+
+    //fetch all data from localStorage
+    let loginArray = JSON.parse(localStorage.getItem("loginArray"));
+
     function formSubmit() {
       event.preventDefault();
-      let lsEmail = localStorage.getItem("email");
-      let lsPassword = localStorage.getItem("password");
 
+      //fetch login form values
       let email = document.querySelector("#email").value;
       let password = document.querySelector("#password").value;
+
+      //filter email and password form arrays
+      let obj = {};
+      loginArray.map(function (ele) {
+        obj[ele.email_key] = ele.password_key;
+      });
+
+      //validation
       if (email == "") {
         alert("Please enter email address");
       } else if (password == "") {
         alert("Please enter password");
-      } else if (lsEmail == email && lsPassword == password) {
+      } else if (email in obj && password == obj[email]) {
         alert("Login successful");
         document.querySelector("#email").value = "";
         document.querySelector("#password").value = "";
