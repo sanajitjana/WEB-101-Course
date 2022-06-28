@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup and Login using LS - Sanajit Jana (fw19_0513)</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 0;
+      }
+      #navbar {
+        padding: 5px 100px;
+        background-color: #1c2938;
+        display: grid;
+        grid-template-columns: 80% 20%;
+        grid-template-rows: auto;
+        gap: 20px;
+      }
+      #navbar > div:nth-child(2) {
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #navbar > div > p {
+        color: #d7d7d7;
+      }
+      img {
+        display: block;
+        margin: auto;
+        margin-top: 50px;
+      }
+      #box {
+        width: 500px;
+        margin: auto;
+        margin-top: 30px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 10px 0px 40px 0px;
+        text-align: center;
+      }
+      form > input {
+        width: 80%;
+        height: 45px;
+        font-size: 16px;
+        margin: auto;
+        margin-top: 25px;
+        border: 1px solid grey;
+        border-radius: 6px;
+        padding: 0px 10px;
+      }
+      #submit {
+        width: 84%;
+        background-color: #2563eb;
+        border: 1px solid transparent;
+        color: white;
+        text-transform: uppercase;
+      }
+      #submit:hover {
+        cursor: pointer;
+      }
+      h3 {
+        margin-bottom: 10px;
+        font-size: 22px;
+      }
+      a {
+        color: #2563eb;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <img src="https://sso.masaischool.com/brand_dark.svg" alt="masai-logo" />
+      <div id="box">
+        <form>
+          <h3>Sign In</h3>
+          <input type="email" id="email" placeholder="Enter email address" />
+          <input type="password" id="password" placeholder="Enter password" />
+          <input type="submit" id="submit" value="Sign In" />
+          <br /><br />
+          <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+      </div>
+    </div>
+  </body>
+  <script>
+    //navbar start
+    let arr = ["Signup", "Login"];
+    let page = ["signup", "login"];
+    let navbar = document.createElement("div");
+    navbar.setAttribute("id", "navbar");
+
+    let check = localStorage.getItem("checkLoginAuth");
+    let logoBox = document.createElement("div");
+    let logoAnchor = document.createElement("a");
+    logoAnchor.style.color = "#d7d7d7";
+    let logo = document.createElement("p");
+    logoAnchor.innerText = "Rebook";
+    logo.append(logoAnchor);
+
+    let menuBox = document.createElement("div");
+    for (let i = 0; i < arr.length; i++) {
+      let menu = document.createElement("p");
+      let anchor = document.createElement("a");
+      anchor.style.textDecoration = "none";
+      anchor.style.color = "#d7d7d7";
+      anchor.setAttribute("href", `${page[i]}.html`);
+      anchor.innerText = arr[i];
+
+      menu.append(anchor);
+      menuBox.append(menu);
+    }
+    logoBox.append(logo);
+    navbar.append(logoBox, menuBox);
+    //navbar end
+
+    let container = document.querySelector(".container");
+    document.querySelector("body").append(navbar, container);
+    document.querySelector("form").addEventListener("submit", formSubmit);
+
+    //fetch all data from localStorage
+    let loginArray = JSON.parse(localStorage.getItem("loginArray")) || [];
+
+    function formSubmit() {
+      event.preventDefault();
+
+      //take inputs
+      let email = document.querySelector("#email").value;
+      let password = document.querySelector("#password").value;
+
+      //take email and password form LS-arrays
+      let obj = {};
+      loginArray.map(function (ele) {
+        obj[ele.email_key] = ele.password_key;
+      });
+
+      //login validation check
+      if (email == "") {
+        alert("Please enter email address");
+      } else if (password == "") {
+        alert("Please enter password");
+      } else if (email in obj && password == obj[email]) {
+        alert("Login successful");
+        document.querySelector("#email").value = "";
+        document.querySelector("#password").value = "";
+        window.location.href = "home.html";
+        localStorage.setItem("checkLoginAuth", "true");
+      } else {
+        alert("Please enter correct details");
+        document.querySelector("#email").value = "";
+        document.querySelector("#password").value = "";
+      }
+    }
+
+    document.querySelector("body").append();
+  </script>
+</html>

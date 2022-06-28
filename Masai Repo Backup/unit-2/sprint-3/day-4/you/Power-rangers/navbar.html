@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #navbar {
+        background-color: #1c2938;
+        border-radius: 15px;
+        padding: 5px 20px;
+        display: grid;
+        grid-template-columns: 70% 30%;
+      }
+      #navbar > div:nth-child(2) {
+        display: flex;
+        justify-content: space-around;
+      }
+      #navbar > div > p {
+        color: #d7d7d7;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    let arr = ["Men", "Women", "Login", "Signup"];
+
+    let page = ["mens", "women", "login", "singnup"];
+
+    let navbar = document.createElement("div");
+    navbar.setAttribute("id", "navbar");
+
+    let logoBox = document.createElement("div");
+    let logo = document.createElement("p");
+    logo.innerText = "Rebook";
+
+    let menuBox = document.createElement("div");
+    for (let i = 0; i < arr.length; i++) {
+      let menu = document.createElement("p");
+      let anchor = document.createElement("a");
+      anchor.style.textDecoration = "none";
+      anchor.style.color = "white";
+      anchor.setAttribute("href", `${page[i]}.html`);
+      anchor.innerText = arr[i];
+      menu.append(anchor);
+      menuBox.append(menu);
+    }
+
+    logoBox.append(logo);
+    navbar.append(logoBox, menuBox);
+    document.querySelector("body").append(navbar);
+  </script>
+</html>

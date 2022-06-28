@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #FBFAF9;
+}
+.navbar{
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+    background-color: white;  
+}
+a{
+    text-decoration: none;
+}
+h1{    
+    color: #000000;
+    text-align: center;
+}
+

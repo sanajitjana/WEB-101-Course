@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Add to cart - Sanajit Jana (fw19_0513)</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      #box {
+        width: 95%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 20px;
+        margin-bottom: 50px;
+      }
+      #navbar {
+        padding: 5px 100px;
+        background-color: #1c2938;
+        display: grid;
+        grid-template-columns: 70% 30%;
+        grid-template-rows: auto;
+        gap: 20px;
+      }
+      #navbar > div:nth-child(2) {
+        display: flex;
+        justify-content: space-around;
+      }
+      #navbar > div > p {
+        color: #d7d7d7;
+      }
+      .page-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      #links {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1%;
+        box-shadow: 2px 2px 5px 5px rgb(235, 235, 235);
+      }
+
+      #links > div {
+        display: flex;
+        list-style: none;
+      }
+      #links a {
+        text-decoration: none;
+        color: teal;
+        font-size: 30px;
+      }
+
+      table,
+      td,
+      th {
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 70%;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+      }
+
+      th,
+      td {
+        padding: 15px;
+      }
+
+      tr > th {
+        background-color: #787e84;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #eaeaea;
+      }
+
+      tr:hover {
+        background-color: #f4f4f4;
+      }
+
+      #bookmark {
+        cursor: pointer;
+        color: #0000ff;
+      }
+      #displayBoard {
+        display: grid;
+        margin: auto;
+        margin-top: 50px;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1 auto;
+        gap: 50px;
+        width: 70%;
+      }
+      #displayBoard > div {
+        margin: auto;
+      }
+      #displayBoard > .discount {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1 auto;
+        flex-direction: row;
+        gap: 20px;
+      }
+      #displayBoard > .calculation {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        margin: auto;
+      }
+      input {
+        height: 30px;
+      }
+      img {
+        width: 50px;
+      }
+      button {
+        font-size: 16px;
+      }
+      #btn_action > button {
+        padding: 5px 10px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    //you need to code here
+    let arr = ["Men", "Women", "Cart"];
+    let page = ["mens", "womens", "cart"];
+    let navbar = document.createElement("div");
+    navbar.setAttribute("id", "navbar");
+    let logoBox = document.createElement("div");
+    let logo = document.createElement("p");
+    logo.innerText = "Rebook";
+
+    let menuBox = document.createElement("div");
+    for (let i = 0; i < arr.length; i++) {
+      let menu = document.createElement("p");
+      let anchor = document.createElement("a");
+      anchor.style.textDecoration = "none";
+      anchor.style.color = "#d7d7d7";
+      anchor.setAttribute("href", `${page[i]}.html`);
+      anchor.innerText = arr[i];
+      menu.append(anchor);
+      menuBox.append(menu);
+    }
+    logoBox.append(logo);
+    navbar.append(logoBox, menuBox);
+
+    //cart table
+    let table = document.createElement("table");
+    let thead = document.createElement("thead");
+    let tr1 = document.createElement("tr");
+    let th1 = document.createElement("th");
+    th1.innerText = "Images";
+    let th2 = document.createElement("th");
+    th2.innerText = "Price";
+    let th3 = document.createElement("th");
+    th3.innerText = "Quantity";
+    let th4 = document.createElement("th");
+    th4.innerText = "Total";
+    let th5 = document.createElement("th");
+    th5.innerText = "Action";
+    tr1.append(th1, th2, th3, th4, th5);
+    thead.append(tr1);
+
+    //tbody
+    let totalQuantity = 0;
+    let totalPrice = 0;
+    let sPrice = 0;
+    let tbody = document.createElement("tbody");
+    let productArr = JSON.parse(localStorage.getItem("productCarts")) || [];
+
+    displayTableData(productArr);
+
+    function displayTableData(productArr) {
+      productArr.forEach(function (ele, index, array) {
+        let tr2 = document.createElement("tr");
+
+        //Image
+        let td1 = document.createElement("td");
+        let img = document.createElement("img");
+        img.setAttribute("src", ele.image_url);
+        td1.append(img);
+
+        //Price
+        let td2 = document.createElement("td");
+        let price = Number(ele.price);
+        td2.innerText = `Rs. ${price}/-`;
+
+        //Quantity
+        let td3 = document.createElement("td");
+        let qty = 1;
+        totalQuantity += qty;
+        td3.innerText = qty;
+
+        //Total
+        let td4 = document.createElement("td");
+        let total = ele.price * qty;
+        totalPrice += total;
+        td4.innerText = `Rs. ${total}/-`;
+
+        //Action
+        let td5 = document.createElement("td");
+        td5.setAttribute("id", "btn_action");
+
+        let incBtn = document.createElement("button");
+        incBtn.innerText = "+";
+        incBtn.addEventListener("click", function () {
+          incFuntion();
+        });
+
+        //inc function
+        function incFuntion() {
+          qty++;
+          if (qty >= 1) {
+            td3.innerText = qty;
+            totalQuantity += 1;
+            sPrice = ele.price;
+            total = ele.price * qty;
+            td4.innerText = `Rs. ${total}/-`;
+            displayTotalQuantity();
+            increaseDisplayTotalPrice(sPrice);
+          }
+        }
+
+        let decBtn = document.createElement("button");
+        decBtn.innerText = "-";
+        decBtn.addEventListener("click", function () {
+          decFuntion(ele);
+        });
+
+        //dec function
+        function decFuntion(ele) {
+          if (qty > 1) {
+            qty--;
+            totalQuantity -= 1;
+            td3.innerText = qty;
+            sPrice = ele.price;
+            total = ele.price * qty;
+            td4.innerText = `Rs. ${total}/-`;
+            displayTotalQuantity();
+            decreaseDisplayTotalPrice(sPrice);
+          } else {
+            alert("Carts need minimul one item");
+          }
+        }
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Delete";
+        deleteBtn.addEventListener("click", function () {
+          deleteFunc(ele, index, array);
+        });
+
+        td5.append(incBtn, decBtn, deleteBtn);
+        tr2.append(td1, td2, td3, td4, td5);
+        tbody.append(tr2);
+      });
+    }
+
+    //calculation displayBoard
+    let displayBoard = document.createElement("div");
+    displayBoard.setAttribute("id", "displayBoard");
+
+    let div1 = document.createElement("div");
+    div1.setAttribute("class", "discount");
+    let input = document.createElement("input");
+    input.setAttribute("placeholder", "Enter promo code");
+    button = document.createElement("button");
+    button.innerText = "Apply Promo";
+    button.style.cursor = "pointer";
+    button.addEventListener("click", function () {
+      let promo = input.value;
+      promoFunc(promo);
+    });
+    div1.append(input, button);
+
+    let div2 = document.createElement("div");
+    div2.setAttribute("class", "calculation");
+
+    //total quantity
+    let qTitle = document.createElement("h3");
+    qTitle.innerText = "Total Quantity:";
+    let quan = document.createElement("h3");
+    function displayTotalQuantity() {
+      quan.innerText = totalQuantity;
+    }
+    displayTotalQuantity();
+
+    //total price
+    let title = document.createElement("h3");
+    title.innerText = "Total Price:";
+    let price = document.createElement("h3");
+    price.setAttribute("id", "counterCalPrice");
+    function displayTotalPrice() {
+      price.innerText = totalPrice;
+    }
+    displayTotalPrice();
+
+    //total price after increase
+    function increaseDisplayTotalPrice(sPrice) {
+      let h3TotalPrice = document.querySelector("#counterCalPrice");
+      let oldPrice = h3TotalPrice.innerText;
+      h3TotalPrice.innerText = +oldPrice + sPrice;
+    }
+
+    //total price aftre decrease
+    function decreaseDisplayTotalPrice(sPrice) {
+      let h3TotalPrice = document.querySelector("#counterCalPrice");
+      let oldPrice = h3TotalPrice.innerText;
+      h3TotalPrice.innerText = +oldPrice - sPrice;
+    }
+
+    //promocode apply
+    function promoFunc(promo) {
+      let h3TotalPrice = document.querySelector("#counterCalPrice");
+      let oldPrice = h3TotalPrice.innerText;
+      if (promo == "") {
+        alert("Please enter a promo code");
+      } else if (promo == "masai30") {
+        oldPrice = (oldPrice - (oldPrice * 30) / 100).toFixed(2);
+        h3TotalPrice.innerText = oldPrice;
+      } else {
+        alert("Wrong promocode");
+      }
+    }
+    div2.append(qTitle, quan, title, price);
+    displayBoard.append(div1, div2);
+
+    function deleteFunc(ele, index, array) {
+      array.splice(index, 1);
+      localStorage.setItem("productCarts", JSON.stringify(array));
+      window.location.reload();
+    }
+
+    table.append(thead, tbody);
+    document.querySelector("body").append(navbar, displayBoard, table);
+  </script>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masai Buttons using JS DOM - Sanajit Jana(fw19_0513)</title>
+  </head>
+  <style>
+    body {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    button {
+      border-radius: 3px;
+      margin: 3px;
+      border: none;
+      padding: 10px 15px;
+    }
+  </style>
+  <body></body>
+  <script>
+    let btnArr = [
+      { name: "Primary", color: "white", bgColor: "#037bff" },
+      { name: "Secondary", color: "white", bgColor: "#6d747c" },
+      { name: "Success", color: "white", bgColor: "#28a744" },
+      { name: "Danger", color: "white", bgColor: "#dc3545" },
+      { name: "Warning", color: "#212529", bgColor: "#ffc009" },
+      { name: "Info", color: "white", bgColor: "#12a2b8" },
+      { name: "Light", color: "#212529", bgColor: "#f8f9fa" },
+      { name: "Dark", color: "white", bgColor: "#343a40" },
+      { name: "Link", color: "#027bff", bgColor: "#transparent" },
+    ];
+    btnArr.forEach(function (ele) {
+      let btn = document.createElement("button");
+      btn.innerText = ele.name;
+      btn.style.backgroundColor = ele.bgColor;
+      btn.style.color = ele.color;
+      document.querySelector("body").append(btn);
+    });
+  </script>
+</html>

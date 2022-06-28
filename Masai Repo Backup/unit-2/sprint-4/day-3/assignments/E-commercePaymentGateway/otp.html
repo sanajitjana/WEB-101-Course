@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #efefef;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 250px;
+      }
+      form > input {
+        height: 45px;
+        font-size: 16px;
+        border: 1px solid grey;
+        border-radius: 6px;
+        padding: 0px 10px;
+      }
+      #submit {
+        background-color: #2563eb;
+        border: 1px solid transparent;
+        color: white;
+        text-transform: uppercase;
+        padding: 0px 20px;
+      }
+      #submit:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="number" id="otp" placeholder="Enter OTP" />
+      <input type="submit" name="" id="submit" />
+    </form>
+  </body>
+  <script>
+    document.querySelector("form").addEventListener("submit", submitFunc);
+
+    function submitFunc(event) {
+      event.preventDefault();
+      let input = document.getElementById("otp").value;
+      if (input == "") {
+        alert("Please enter OTP");
+      } else if ("1234" == input) {
+        alert("Congratulations! Payment successful");
+        document.getElementById("otp").value = "";
+        window.location.href = "home.html";
+        localStorage.removeItem("finalPrice");
+        localStorage.removeItem("productCarts");
+      } else {
+        alert("Wrong OTP");
+        document.getElementById("otp").value = "";
+      }
+    }
+  </script>
+</html>

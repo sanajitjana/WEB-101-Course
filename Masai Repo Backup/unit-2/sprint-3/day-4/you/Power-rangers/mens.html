@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent{
+            /* border: 1px solid red; */
+            width: 90%;
+            margin: auto;
+            display:grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        #parent>div{
+            padding: 20px;
+            /* border: 1px solid black; */
+        }
+        p+div{
+            display: flex;
+            /* border: 1px solid teal; */
+        }
+        p{
+            font-size: 30px;
+        }
+        h1+p{
+            margin: auto;
+            color: gray;
+        }
+        .gray{
+            color: gray;
+            text-decoration: line-through;
+        }
+        .green{
+            color: green;
+            font-weight: bold;
+        }
+        .bld{
+            font-weight: bold;
+        }
+        .img{
+            text-align: center;
+        }
+        .price>p{
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div>
+            <div class="img"><img src="https://rukminim2.flixcart.com/image/332/398/jf9zxjk0/shrug/y/d/y/xxl-pasrg03181192-blk-pause-original-imaf3scthzumcghm.jpeg?q=50" alt="error"></div>
+            <h1>Pause</h1>
+            <p>Men Cotton Long Sleeves Shrug</p>
+            <div class="price">
+                <p class="bld">₹359</p>
+                <p class="gray">₹1,499</p>
+                <p class="green">-76%</p>
+            </div>
+        </div>
+        <div>
+            <div class="img"><img src="https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPJUBINATION-SJERS295568BD3913AD/1562955990957_0..jpg?imwidth=282&impolicy=hq" alt="error"></div>
+            <h1>JUBINATION</h1>
+            <p>Men Wool Sleeveless Sweater Pack Of 1</p>
+            <div class="price">
+                <p class="bld">₹799</p>
+                <p class="gray">₹1,499</p>
+                <p class="green">-47%</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

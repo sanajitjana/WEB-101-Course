@@ -1,0 +1,18 @@
+#filter{    
+    width: 220px;
+    border: 2px solid black;
+    display: block;
+    margin: auto;
+    margin-top: 30px;    
+    font-size: 18px;
+}
+td:nth-child(6){
+    color: white;
+    cursor: pointer;
+    background-color: #008001;
+}
+td:last-child{
+    color: white;
+    cursor: pointer;
+    background-color: #FE0100;
+}

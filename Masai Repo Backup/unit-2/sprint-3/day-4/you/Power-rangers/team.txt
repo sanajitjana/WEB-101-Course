@@ -1,0 +1,9 @@
+Team name - Power Ranger
+
+Members:-
+
+Shishir Kumar Padhan - pagelinking branch 
+Sanajit Jana - Navbar branch
+Suresh Kumar Mallik - Login Page
+Chandu Dhakad - Signup page
+Dinesh Jangid - Mens branch
