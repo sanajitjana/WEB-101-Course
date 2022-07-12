@@ -1,0 +1,37 @@
+
+Team-Name : Zappos Army
+
+
+Suraj Jadahv - headerFooterBranch
+---------------------------------------------
+header section -           header.html
+footer section -           footer.html
+
+
+Suman Garai - homePageBranch
+---------------------------------------------
+home page -                index.html
+
+
+Kailash Chndra - signinSignupBranch
+---------------------------------------------
+sign-in page -             sign-in.html
+sign-up page -             sign-up.html
+
+
+Sanajit Jana - productListBranch
+---------------------------------------------
+product-list page -        product-list.html
+
+
+Pavan Kalyan - productDetailsBranch
+---------------------------------------------
+product-details page -     product-details.html
+
+
+Monu Kumar - cartCheckoutBranch
+---------------------------------------------
+cart page -                cart.html
+checkout page -            checkout.html
+
+
